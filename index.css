@@ -3,6 +3,11 @@
     top: 6rem;
     left: 6rem;
 }
+#fontSwap {
+    position: fixed;
+    top: 12rem;
+    left: 6rem;
+}
 
 :root {
     --primary-color: rgb(5,48,82);
@@ -26,7 +31,7 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    font-family: 'eb garamond', serif;
+    font-family: "";
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,6 +57,7 @@ body * {
 }
 h1 {
     font-size: 3.5em;
+    font-family: "Playball", cursive;
 }
 h2 {
     font-size: 2.5em;
