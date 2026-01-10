@@ -22,7 +22,7 @@
     box-sizing: border-box;
 }
 html {
-    font-size: min(2vmin, 16px);
+    font-size: min(2vmin, 14px);
     scroll-behavior: smooth;
 }
 body {
