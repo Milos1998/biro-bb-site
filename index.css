@@ -1,15 +1,13 @@
-/* Should match entries from settings.system, can have more that that */
 :root {
-    --primary-color: #eaeaea;
-    --font-primary-color: #100546;
-    --font-secondary-color: #eaeaea;
-    --nav-color: #eaeaea;
-    --link-color: #000000;
-    --link-active-color: #000000;
-    --contact-btn-bg-color: #000000;
-    --contact-btn-font-color: #000000;
-    --button-background: #eaeaea;
-    --button-font-color: #000000;
+    --primary-color: rgb(5,48,82);
+    --secondary-color: rgb(236,228,169);
+    --tertiary-color: rgb(225,219,215);
+    --font-primary-color: rgb(236,228,169);
+    --font-secondary-color: rgb(5,48,82);
+    --font-tertiary-color: rgb(225,219,215);
+    --nav-color: rgba(5,48,82, 0.4);
+    --nav-link-color: rgb(236,228,169);
+    --nav-link-active-color: rgb(236,228,169);
 }
 * {
     margin: 0;
@@ -22,7 +20,7 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    font-family: 'Helvetica Neue', sans-serif;
+    font-family: 'eb garamond', serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,7 +41,7 @@ body {
 body * {
     font-size: 1em;
     animation-name: fadeIn;
-    animation-duration: 1s;
+    animation-duration: 2s;
     animation-fill-mode: forwards;
 }
 h1 {
@@ -65,6 +63,12 @@ img {
     -webkit-user-select: none;
     -ms-user-select: none;
 }
+section, footer {
+    padding-top: 5.5rem;
+}
+section > h2, footer > h2 {
+    text-align: center;
+}
 
 
 nav {
@@ -78,7 +82,7 @@ nav {
     align-items: center;
     gap: 5rem;
     height: 5.5rem;
-    opacity: 0.9;
+    backdrop-filter: blur(10px);
     background-color: var(--nav-color);
     z-index: 10000000;
 }
@@ -86,14 +90,10 @@ nav > * {
     text-decoration: none;
 }
 a:link, a:visited {
-    color: var(--link-color);
+    color: var(--nav-link-color);
 }
 a:hover, a:active {
-    color: var(--link-active-color);
-}
-section > h2, footer > h2 {
-    padding-top: 5.5rem;
-    text-align: center;
+    color: var(--nav-link-active-color);
 }
 nav #logo {
     margin-right: 3rem;
@@ -111,7 +111,7 @@ nav #logo img {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    color: var(--font-secondary-color);
+    color: var(--font-primary-color);
     font-size: 1em;
 }
 #hero {
@@ -139,7 +139,9 @@ nav #logo img {
 
 
 #services {
-    padding: 0 15%;
+    padding: 5.5rem 15% 2.5rem 15%;
+    background-color: var(--tertiary-color);
+    color: var(--font-secondary-color);
 }
 #services div {
     display: flex;
@@ -155,11 +157,12 @@ nav #logo img {
 
 
 #references {
-    padding: 0 6%;
+    padding: 5.5rem 6% 5rem 6%;
 }
 #references > div {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     flex-wrap: wrap;
     margin-top: 2.5em;
     gap: 2.5em;
@@ -188,7 +191,7 @@ nav #logo img {
     gap: 1em;
     align-items: center;
     font-size: 0.7em;
-    width: 30%;
+    width: 25vw;
 }
 #references .project-small > img {
     width: 100%;
@@ -204,7 +207,6 @@ nav #logo img {
     flex-wrap: nowrap;
     overflow-x: auto;
     mask-image: linear-gradient(90deg, transparent, #000000 5%, #000000 95%, transparent);
-    margin: 0 0 2em 0;
 }
 #references .partner-logos-wrapper::-webkit-scrollbar {
     display: none;
@@ -235,7 +237,9 @@ nav #logo img {
 
 
 #about {
-    padding: 0 10%;
+    padding: 5.5rem 15% 5rem 15%;
+    background-color: var(--secondary-color);
+    color: var(--font-secondary-color);
 }
 #about .history, #about .present {
     margin-top: 2em;
@@ -244,9 +248,10 @@ nav #logo img {
     align-items: center;
     gap: 1em;
     text-align: justify;
+    font-size: 1.2em;
 }
 #about .history img, #about .present img {
-    width: 40vw;
+    width: 35vw;
     height: auto;
 }
 #about .present {
@@ -256,35 +261,48 @@ nav #logo img {
 
 #contact {
     width: 100%;
-    padding: 0 10%;
-    margin-bottom: 3em;
-}
-#contact .contact-wrapper {
+    padding-bottom: 3em;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 2em;
-    margin-top: 2em;
+    background-color: var(--primary-color);
+    color: var(--font-primary-color);
 }
-#contact .contact-wrapper > div {
-    display: grid;
-    grid-template-areas:
-        "contact-title contact-val"
-        "contact-title contact-val"
-        "contact-title contact-val"
-        "contact-title contact-val"
-    ;
-    column-gap: 0.5em;
-    row-gap: 3em;
-    align-items: center;
-}
-#contact .contact-wrapper span {
-    font-weight: bold;
+#contact i {
+    color: var(--font-primary-color);
 }
 #contact iframe {
-    width: 40vmin;
+    width: 100%;
     height: 20em;
+}
+#contact a {
+    text-decoration: none;
+}
+#contact .phone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: 2em;
+    background-color: var(--secondary-color);
+    padding: 1em 4em;
+    border-radius: 0.5em;
+    color: var(--font-secondary-color);
+}
+#contact .phone p {
+    margin: 0;
+}
+#contact .phone a {
+    color: var(--font-secondary-color);
+}
+#contact .email {
+    background-color: var(--secondary-color);
+    color: var(--font-secondary-color);
+    padding: 1em 4em;
+    border-radius: 0.5em;
+    margin-bottom: 2em;
 }
 
 

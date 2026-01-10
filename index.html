@@ -10,10 +10,12 @@
 <body>
     <nav>
         <a href="#home" id="logo"><img src="./biro bb logo red.png" alt="Biro BB logo"></a>
+        <a href="#home">Početna</a>
         <a href="#services">Usluge</a>
         <a href="#references">Projekti</a>
         <a href="#about">O nama</a>
         <a href="#contact">Kontakt</a>
+        <button id="colorSwap" onclick="onChangeColor()">Boje 1</button>
     </nav>
 
     <header id="home">
@@ -182,23 +184,103 @@
 
     <footer id="contact">
         <h2>Kontakt</h2>
-        <div class="contact-wrapper">
+        <div class="phone">
+            <p>
+                Pozovite nas
+            </p>
             <div>
-                <span>Ivan:</span>
+                <span>Arhitekta Ivan Bogdanović:</span>
                 <a href="tel:+381638221363">063 822 13 63</a>
-                <span>Darko:</span>
-                <a href="tel:+38162319555">062 319 555</a>
-                <span>E-mail:</span>
-                <a href="mailto:birobb90@gmail.com">birobb90@gmail.com</a>
-                <span>Adresa:</span>
-                <a target="_blank" href="http://maps.google.com/?q=Biro BB Bulevar Despota Stefana br.45, st 5, Velika Plana 11320">Bulevar Despota Stefana br.45, st 5, Velika Plana 11320</a>
             </div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2853.9603821974088!2d21.06922891276267!3d44.33131877095751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4750d13ec9ac47b5%3A0x21634cd6d960f1aa!2sBiro%20BB!5e0!3m2!1sen!2srs!4v1767741872939!5m2!1sen!2srs" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div>
+                <span>Inženjer Darko Bogdanović:</span>
+                <a href="tel:+38162319555">062 319 555</a>
+            </div>
         </div>
+        <a href="mailto:birobb90@gmail.com" class="email">Pisite nam</a>
+        <div>
+            <span>Adresa:</span>
+            <a target="_blank" href="http://maps.google.com/?q=Biro BB Bulevar Despota Stefana br.45, st 5, Velika Plana 11320"><i>Bulevar Despota Stefana br.45, st 5, Velika Plana 11320</i></a>
+        </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2853.9603821974088!2d21.06922891276267!3d44.33131877095751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4750d13ec9ac47b5%3A0x21634cd6d960f1aa!2sBiro%20BB!5e0!3m2!1sen!2srs!4v1767741872939!5m2!1sen!2srs" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </footer>
 
     <div id="developer">
         Web-prezentaciju napravio&nbsp;<i>Pavlović dev center</i>. Za upite pošaljite nam email na&nbsp;<a href="mailto:pavlovic.dev.center@gmail.com">pavlovic.dev.center@gmail.com</a>.
     </div>
 </body>
+
+<script>
+    const colorSchemes = [
+        {
+            "--primary-color": "rgb(5,48,82)",
+            "--secondary-color": "rgb(236,228,169)",
+            "--tertiary-color": "rgb(236,228,169)",
+            "--font-primary-color": "rgb(236,228,169)",
+            "--font-secondary-color": "rgb(5,48,82)",
+            "--font-tertiary-color": "rgb(225,219,215)",
+            "--nav-color": "rgba(5,48,82, 0.4)",
+            "--nav-link-color": "rgb(236,228,169)",
+            "--nav-link-active-color": "rgb(236,228,169)",
+        },
+        {
+            "--primary-color": "rgb(69, 30, 18)",
+            "--secondary-color": "rgb(225,219,215)",
+            "--tertiary-color": "rgb(225,219,215)",
+            "--font-primary-color": "rgb(225,219,215)",
+            "--font-secondary-color": "rgb(69, 30, 18)",
+            "--font-tertiary-color": "rgb(225,219,215)",
+            "--nav-color": "rgba(69, 30, 18, 0.4)",
+            "--nav-link-color": "rgb(225,219,215)",
+            "--nav-link-active-color": "rgb(225,219,215)",
+        },
+        {
+            "--primary-color": "rgb(88,92,68)",
+            "--secondary-color": "rgb(242 244 222)",
+            "--tertiary-color": "rgb(251,247,236)",
+            "--font-primary-color": "rgb(242 244 222)",
+            "--font-secondary-color": "rgb(88,92,68)",
+            "--font-tertiary-color": "rgb(251,247,236)",
+            "--nav-color": "rgba(88,92,68, 0.4)",
+            "--nav-link-color": "rgb(242 244 222)",
+            "--nav-link-active-color": "rgb(242 244 222)",
+        },
+        {
+            "--primary-color": "rgb(102,93,54)",
+            "--secondary-color": "rgb(240,242,216)",
+            "--tertiary-color": "rgb(240,242,216)",
+            "--font-primary-color": "rgb(240,242,216)",
+            "--font-secondary-color": "rgb(102,93,54)",
+            "--font-tertiary-color": "rgb(240,242,216)",
+            "--nav-color": "rgba(102,93,54, 0.4)",
+            "--nav-link-color": "rgb(240,242,216)",
+            "--nav-link-active-color": "rgb(240,242,216)",
+        },
+        {
+            "--primary-color": "rgb(18,18,18)",
+            "--secondary-color": "rgb(254,248,229)",
+            "--tertiary-color": "rgb(204 191 150)",
+            "--font-primary-color": "rgb(254,248,229)",
+            "--font-secondary-color": "rgb(18,18,18)",
+            "--font-tertiary-color": "rgb(204 191 150)",
+            "--nav-color": "rgba(18,18,18, 0.4)",
+            "--nav-link-color": "rgb(254,248,229)",
+            "--nav-link-active-color": "rgb(254,248,229)",
+        },
+    ]
+
+    let colorsIdx = -1;
+    function onChangeColor() {
+        colorsIdx++;
+        if (colorsIdx >= colorSchemes.length) colorsIdx %= colorSchemes.length;
+
+        const scheme = colorSchemes[colorsIdx];
+        Object.entries(scheme).forEach(([key, val]) => {
+            document.documentElement.style.setProperty(key, val);
+        });
+        const counterBtn = document.getElementById("colorSwap");
+        counterBtn.innerHTML = `Boje ${colorsIdx + 1}`;
+    }
+    onChangeColor();
+</script>
 </html>
