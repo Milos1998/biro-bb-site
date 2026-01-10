@@ -10,12 +10,10 @@
 <body>
     <nav>
         <a href="#home" id="logo"><img src="./biro bb logo red.png" alt="Biro BB logo"></a>
-        <a href="#home">Početna</a>
         <a href="#services">Usluge</a>
         <a href="#references">Projekti</a>
         <a href="#about">O nama</a>
         <a href="#contact">Kontakt</a>
-        <button id="colorSwap" onclick="onChangeColor()">Boje 1</button>
     </nav>
 
     <header id="home">
@@ -94,25 +92,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="project-small">
-                    <img src="./project-large.jpg" alt="An image of traditional A frame house, with a modern look">
-                    <div>
-                        <h3 class="project-title">Kuća u Velikoj Plani</h3>
-                        <p class="project-description">
-                            Savremena A-frame kuća od 370 m², u kojoj se moderan dizajn i čiste linije skladno stapaju. Minimalistički eksterijer prirodno se nastavlja u funkcionalan i topao enterijer. 
-                        </p>
-                    </div>
-                </div>
                 <div class="project-large project-large-reverse">
-                    <img src="./project-large.jpg" alt="An image of traditional A frame house, with a modern look">
-                    <div>
-                        <h3 class="project-title">Kuća u Velikoj Plani</h3>
-                        <p class="project-description">
-                            Savremena A-frame kuća od 370 m², u kojoj se moderan dizajn i čiste linije skladno stapaju. Minimalistički eksterijer prirodno se nastavlja u funkcionalan i topao enterijer. 
-                        </p>
-                    </div>
-                </div>
-                <div class="project-small">
                     <img src="./project-large.jpg" alt="An image of traditional A frame house, with a modern look">
                     <div>
                         <h3 class="project-title">Kuća u Velikoj Plani</h3>
@@ -170,6 +150,7 @@
                     Biro BB je porodična arhitektonsko-građevinska firma sa tradicijom dužom od tri decenije. Osnovao ju je građevinski
                     inženjer Blagoje Bogdanović 1990. godine, sa jasnom vizijom kvaliteta, preciznosti i pouzdanosti.
                 </p>
+                <div class="dimmer"></div>
                 <img src="./architect.jpg" alt="Architect working on an old drafting table">
             </div>
             <div class="present">
@@ -177,6 +158,7 @@
                     Od projektovanja, preko izvođenja i stručnog nadzora, danas nudimo kompletna rešenja u oblasti arhitekture i građevine.
                     Iskustvo i znanje osnivača danas nastavljaju sinovi Ivan, diplomirani arhitekta, i Darko, građevinski inženjer.
                 </p>
+                <div class="dimmer"></div>
                 <img src="./two architects.jpg" alt="Two architects looking at jobsite">
             </div>
         </section>
@@ -197,16 +179,17 @@
                 <a href="tel:+38162319555">062 319 555</a>
             </div>
         </div>
-        <a href="mailto:birobb90@gmail.com" class="email">Pisite nam</a>
-        <div>
+        <a href="mailto:birobb90@gmail.com" class="email">Pišite nam</a>
+        <div class="address">
             <span>Adresa:</span>
-            <a target="_blank" href="http://maps.google.com/?q=Biro BB Bulevar Despota Stefana br.45, st 5, Velika Plana 11320"><i>Bulevar Despota Stefana br.45, st 5, Velika Plana 11320</i></a>
+            <a target="_blank" href="http://maps.google.com/?q=Biro BB Bulevar Despota Stefana br.45, st 5, Velika Plana 11320"><i>Bulevar&nbsp;Despota&nbsp;Stefana&nbsp;br.45,&nbsp;st&nbsp;5, Velika&nbsp;Plana&nbsp;11320</i></a>
         </div>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2853.9603821974088!2d21.06922891276267!3d44.33131877095751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4750d13ec9ac47b5%3A0x21634cd6d960f1aa!2sBiro%20BB!5e0!3m2!1sen!2srs!4v1767741872939!5m2!1sen!2srs" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </footer>
 
+    <button id="colorSwap" onclick="onChangeColor()">Boje 1</button>
     <div id="developer">
-        Web-prezentaciju napravio&nbsp;<i>Pavlović dev center</i>. Za upite pošaljite nam email na&nbsp;<a href="mailto:pavlovic.dev.center@gmail.com">pavlovic.dev.center@gmail.com</a>.
+        Web-prezentaciju napravio&nbsp;<i>Pavlović&nbsp;dev&nbsp;center.</i> Za upite pošaljite nam email na <a href="mailto:pavlovic.dev.center@gmail.com">pavlovic.dev.center@gmail.com</a>.
     </div>
 </body>
 
@@ -269,7 +252,7 @@
         },
     ]
 
-    let colorsIdx = -1;
+    let colorsIdx = 3;
     function onChangeColor() {
         colorsIdx++;
         if (colorsIdx >= colorSchemes.length) colorsIdx %= colorSchemes.length;

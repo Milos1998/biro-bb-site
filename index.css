@@ -1,3 +1,9 @@
+#colorSwap {
+    position: fixed;
+    top: 6rem;
+    left: 6rem;
+}
+
 :root {
     --primary-color: rgb(5,48,82);
     --secondary-color: rgb(236,228,169);
@@ -13,10 +19,10 @@
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 1vmin;
     box-sizing: border-box;
 }
 html {
+    font-size: min(2vmin, 16px);
     scroll-behavior: smooth;
 }
 body {
@@ -45,16 +51,16 @@ body * {
     animation-fill-mode: forwards;
 }
 h1 {
-    font-size: 5em;
+    font-size: 3.5em;
 }
 h2 {
-    font-size: 3em;
+    font-size: 2.5em;
 }
 h3 {
     font-size: 1.5em;
 }
 p {
-    margin: 1em 0 1em 0;
+    margin: 0.7em 0 0.7em 0;
 }
 img {
     -webkit-user-drag: none;
@@ -123,14 +129,14 @@ nav #logo img {
     position: relative;
     left: 7%;
     top: 15%;
-    width: 93%;
+    width: 86%;
     font-size: 2em;
 }
 #hero > div {
     position: relative;
     top: 35%;
     left: 7%;
-    width: 93%;
+    width: 86%;
     overflow : auto;
 }
 #hero p {
@@ -146,12 +152,12 @@ nav #logo img {
 #services div {
     display: flex;
     flex-direction: column;
-    margin-top: 2.5em;
-    gap: 2.5em;
+    margin-top: 1.6em;
+    gap: 1.6em;
     user-select: none;
 }
 #services summary {
-    margin-bottom: 0.6em;
+    margin-bottom: 0.4em;
     cursor: pointer;
 }
 
@@ -183,7 +189,7 @@ nav #logo img {
     flex-direction: row-reverse;
 }
 #references .project-large > img {
-    width: 40vw;
+    width: 50vw;
 }
 #references .project-small {
     display: flex;
@@ -191,7 +197,7 @@ nav #logo img {
     gap: 1em;
     align-items: center;
     font-size: 0.7em;
-    width: 25vw;
+    width: 40vw;
 }
 #references .project-small > img {
     width: 100%;
@@ -241,6 +247,9 @@ nav #logo img {
     background-color: var(--secondary-color);
     color: var(--font-secondary-color);
 }
+#about .dimmer {
+    display: none;
+}
 #about .history, #about .present {
     margin-top: 2em;
     display: flex;
@@ -275,7 +284,7 @@ nav #logo img {
 }
 #contact iframe {
     width: 100%;
-    height: 20em;
+    height: 10em;
 }
 #contact a {
     text-decoration: none;
@@ -285,7 +294,6 @@ nav #logo img {
     flex-direction: column;
     align-items: center;
     gap: 1em;
-    margin-bottom: 2em;
     background-color: var(--secondary-color);
     padding: 1em 4em;
     border-radius: 0.5em;
@@ -302,7 +310,6 @@ nav #logo img {
     color: var(--font-secondary-color);
     padding: 1em 4em;
     border-radius: 0.5em;
-    margin-bottom: 2em;
 }
 
 
@@ -310,10 +317,8 @@ nav #logo img {
     width: 100%;
     color: #eaeaea;
     background-color: #000000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
+    text-align: center;
+    font-size: 2rem;
     padding: 1rem 0 1rem 0;
     margin: 0;
 }
@@ -325,4 +330,70 @@ nav #logo img {
 }
 #developer > a:hover, #developer > a:active {
     color: #ffffff;
+}
+
+
+@media (max-aspect-ratio: 1/1) {
+    nav {
+        gap: 2rem;
+    }
+    nav #logo {
+        margin-right: 1rem;
+    }
+
+
+    #services {
+        padding: 5.5rem 7% 2.5rem 7%;
+    }
+
+
+    #references .project-large {
+        flex-direction: column;
+    }
+    #references .project-large-reverse {
+        flex-direction: column;
+    }
+    #references .project-large > img, #references .project-small {
+        font-size: 1em;
+        width: 100%;
+    }
+
+
+    #about {
+        padding: 5.5rem 7% 5rem 7%;
+    }
+    #about {
+        padding: 5.5rem 0 5rem 0;
+    }
+    #about .history, #about .present {
+        position: relative;
+    }
+    #about .dimmer {
+        display: block;
+        z-index: 10000;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    #about .history > p, #about .present > p {
+        position: absolute;
+        z-index: 10001;
+        padding: 0 7%;
+        color: var(--font-primary-color);
+    }
+    #about .history img, #about .present img {
+        width: 100%;
+        height: auto;
+    }
+
+
+
+    #contact .phone {
+        padding: 1em 2em;
+    }
+    #contact .address {
+        padding: 0 7%;
+        text-align: center;
+    }
 }
