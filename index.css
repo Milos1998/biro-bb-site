@@ -1,24 +1,21 @@
-#colorSwap {
-    position: fixed;
-    top: 6rem;
-    left: 6rem;
+@font-face {
+    font-family: "Montserrat";
+    src: url("./Montserrat.ttf");
 }
-#fontSwap {
-    position: fixed;
-    top: 12rem;
-    left: 6rem;
+@font-face {
+    font-family: "Playball";
+    src: url("./Playball.ttf");
 }
-
 :root {
-    --primary-color: rgb(5,48,82);
-    --secondary-color: rgb(236,228,169);
-    --tertiary-color: rgb(225,219,215);
-    --font-primary-color: rgb(236,228,169);
-    --font-secondary-color: rgb(5,48,82);
-    --font-tertiary-color: rgb(225,219,215);
-    --nav-color: rgba(5,48,82, 0.4);
-    --nav-link-color: rgb(236,228,169);
-    --nav-link-active-color: rgb(236,228,169);
+    --primary-color: rgb(18, 18, 18);
+    --secondary-color: rgb(254, 248, 229);
+    --tertiary-color: rgb(204, 191, 150);
+    --font-primary-color: rgb(254, 248, 229);
+    --font-secondary-color: rgb(18, 18, 18);
+    --font-tertiary-color: rgb(204, 191, 150);
+    --nav-color: rgba(18, 18, 18, 0.4);
+    --nav-link-color: rgb(254, 248, 229);
+    --nav-link-active-color: rgb(254, 248, 229);
 }
 * {
     margin: 0;
@@ -31,7 +28,7 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    font-family: "";
+    font-family: "Montserrat", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -302,7 +299,6 @@ nav #logo img {
     gap: 1em;
     background-color: var(--secondary-color);
     padding: 1em 4em;
-    border-radius: 0.5em;
     color: var(--font-secondary-color);
 }
 #contact .phone p {
@@ -315,7 +311,6 @@ nav #logo img {
     background-color: var(--secondary-color);
     color: var(--font-secondary-color);
     padding: 1em 4em;
-    border-radius: 0.5em;
 }
 
 
