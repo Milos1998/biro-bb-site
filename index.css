@@ -104,6 +104,7 @@ a:hover, a:active {
     display: none;
     height: 100%;
     flex-direction: column;
+    font-size: 1.3em;
 }
 .nav-vertical-wrapper {
     display: none;
@@ -137,12 +138,13 @@ a:hover, a:active {
     width: 100%;
     height: 100%;
 }
-#hero h2 {
+#hero > p {
     position: relative;
     left: 7%;
     top: 15%;
     width: 86%;
     font-size: 2em;
+    margin: 0;
 }
 #hero > div {
     position: relative;
@@ -151,7 +153,7 @@ a:hover, a:active {
     width: 86%;
     overflow : auto;
 }
-#hero p {
+#hero >div > p {
     font-size: 1.6em;
 }
 
@@ -161,7 +163,7 @@ a:hover, a:active {
     background-color: var(--tertiary-color);
     color: var(--font-secondary-color);
 }
-#services div {
+#services .detailList {
     display: flex;
     flex-direction: column;
     margin-top: 1.6em;
@@ -169,8 +171,11 @@ a:hover, a:active {
     user-select: none;
     text-align: justify;
 }
+#services details {
+    border: var(--font-secondary-color) 0.1rem solid;
+    padding: 0.4em;
+}
 #services summary {
-    margin-bottom: 0.4em;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -231,7 +236,7 @@ a:hover, a:active {
     gap: 1em;
     align-items: center;
     font-size: 0.7em;
-    width: 40vw;
+    width: 39vw;
 }
 #references .project-small > img {
     width: 100%;
