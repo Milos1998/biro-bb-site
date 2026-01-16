@@ -38,19 +38,8 @@ body {
     width: 100%;
     font-size: 2rem;
 }
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
 body * {
     font-size: 1em;
-    animation-name: fadeIn;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
 }
 h1 {
     font-size: 3.5em;
@@ -80,7 +69,7 @@ section > h2, footer > h2 {
 }
 
 
-nav {
+.nav {
     position: fixed;
     top: 0;
     display: flex;
@@ -95,7 +84,7 @@ nav {
     background-color: var(--nav-color);
     z-index: 10000000;
 }
-nav > * {
+.nav > * {
     text-decoration: none;
 }
 a:link, a:visited {
@@ -104,22 +93,42 @@ a:link, a:visited {
 a:hover, a:active {
     color: var(--nav-link-active-color);
 }
-nav #logo {
+.nav-horizontal #logo {
     margin-right: 3rem;
 }
-nav #logo img {
+.nav #logo img {
     height: 4rem;
     width: auto;
+}
+.nav-vertical {
+    display: none;
+    height: 100%;
+    flex-direction: column;
+}
+.nav-vertical-wrapper {
+    display: none;
+    z-index: 10000000;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+#nav-open-btn, #nav-close-btn {
+    display: none;
+    position: fixed;
+    top: 3rem;
+    right: 2rem;
+    height: 4rem;
+    width: auto;
+}
+#nav-close-btn {
+    z-index: 10000001;
 }
 
 
 #home {
     width: 100%;
     height: 85vh;
-    background-image: url("./background.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background: url("./background.png") center / cover no-repeat;
     color: var(--font-primary-color);
     font-size: 1em;
 }
@@ -162,6 +171,25 @@ nav #logo img {
 #services summary {
     margin-bottom: 0.4em;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+#services summary::marker {
+    content: none;
+}
+#services summary::before {
+    content: " ";
+    display: inline-block;
+    background: url("./triangle.svg") center / contain no-repeat;
+    height: 1em;
+    width: 1em;
+    margin-right: 0.5em;
+}
+#services summary.beforeRotate0::before {
+    animation: rotate0 0.1s forwards linear;
+}
+#services summary.beforeRotate90::before {
+    animation: rotate90 0.1s forwards linear;
 }
 
 
@@ -219,14 +247,6 @@ nav #logo img {
 }
 #references .partner-logos-wrapper::-webkit-scrollbar {
     display: none;
-}
-@keyframes spin {
-    from {
-        translate: 0;
-    }
-    to {
-        translate: -100%;
-    }
 }
 #references .partner-logos {
     display: flex;
@@ -289,9 +309,6 @@ nav #logo img {
     width: 100%;
     height: 10em;
 }
-#contact a {
-    text-decoration: none;
-}
 #contact .phone {
     display: flex;
     flex-direction: column;
@@ -334,12 +351,49 @@ nav #logo img {
 }
 
 
-@media (max-aspect-ratio: 1/1) {
-    nav {
-        gap: 2rem;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
     }
-    nav #logo {
-        margin-right: 1rem;
+    to {
+        opacity: 1;
+    }
+}
+@keyframes spin {
+    from {
+        translate: 0;
+    }
+    to {
+        translate: -100%;
+    }
+}
+@keyframes rotate0 {
+    from {
+        transform: rotate(90deg);
+    }
+    to {
+        transform: rotate(0);
+    }
+}
+@keyframes rotate90 {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(90deg);
+    }
+}
+
+
+@media (max-aspect-ratio: 1/1) {
+    .nav-horizontal {
+        display: none;
+    }
+    .nav-vertical-wrapper {
+        display: block;
+    }
+    #nav-open-btn {
+        display: block;
     }
 
 

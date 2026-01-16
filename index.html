@@ -9,7 +9,18 @@
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <nav>
+    <div aria-hidden class="nav-vertical-wrapper">
+        <img id="nav-open-btn" src="./burger.svg" alt="hamburger icon">
+        <div class="nav nav-vertical">
+            <a href="#home" id="logo"><img src="./biro bb logo.png" alt="Biro BB logo"></a>
+            <a href="#services">Usluge</a>
+            <a href="#references">Projekti</a>
+            <a href="#about">O nama</a>
+            <a href="#contact">Kontakt</a>
+        </div>
+        <img id="nav-close-btn" src="./cross.svg" alt="X icon">
+    </div>
+    <nav class="nav nav-horizontal">
         <a href="#home" id="logo"><img src="./biro bb logo.png" alt="Biro BB logo"></a>
         <a href="#services">Usluge</a>
         <a href="#references">Projekti</a>
@@ -174,4 +185,41 @@
         Web-prezentaciju napravio&nbsp;<i>Pavlović&nbsp;dev&nbsp;center.</i> Za upite pošaljite nam email na <a href="mailto:pavlovic.dev.center@gmail.com">pavlovic.dev.center@gmail.com</a>.
     </div>
 </body>
+
+<script>
+    function toggleServiceClass(e) {
+        const summary = e.target.children[0];
+        if (summary.classList.contains("beforeRotate0")) summary.classList.replace("beforeRotate0", "beforeRotate90");
+        else if (summary.classList.contains("beforeRotate90")) summary.classList.replace("beforeRotate90", "beforeRotate0");
+        else summary.classList.add("beforeRotate90")
+    }
+
+    const services = document.getElementById("services");
+    const details = services.getElementsByTagName("details");
+    for (const detail of details) {
+        detail.addEventListener("toggle", toggleServiceClass);
+    }
+
+    const navOpen = document.getElementById("nav-open-btn");
+    const navClose = document.getElementById("nav-close-btn");
+    const navVertical = document.querySelector(".nav-vertical");
+
+    navOpen.onclick = () => {
+        navVertical.style.display = "flex";
+        navOpen.style.display = "none";
+        navClose.style.display = "block";
+    };
+    function hideNavigation() {
+        navVertical.style.display = "none";
+        navClose.style.display = "none";
+        navOpen.style.display = "block";
+    }
+    navClose.onclick = hideNavigation;
+    for (const node of navVertical.children) {
+        node.onclick = hideNavigation;
+    }
+
+
+</script>
+
 </html>
