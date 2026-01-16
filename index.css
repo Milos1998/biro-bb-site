@@ -167,6 +167,7 @@ a:hover, a:active {
     margin-top: 1.6em;
     gap: 1.6em;
     user-select: none;
+    text-align: justify;
 }
 #services summary {
     margin-bottom: 0.4em;
@@ -196,13 +197,15 @@ a:hover, a:active {
 #references {
     padding: 5.5rem 6% 5rem 6%;
 }
-#references > div {
+#references > .projects {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
     margin-top: 2.5em;
     gap: 2.5em;
+    text-align: justify;
+    overflow-x: hidden;
 }
 #references > img {
     height: auto;
@@ -236,32 +239,24 @@ a:hover, a:active {
 #references .portfolio {
     text-align: center;
     font-size: 1.5em;
+    margin-top: 2.5em;
 }
 #references .partner-logos-wrapper {
     width: 88vw;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    overflow-x: auto;
+    overflow: hidden;
+    white-space: nowrap;
     mask-image: linear-gradient(90deg, transparent, #000000 5%, #000000 95%, transparent);
-}
-#references .partner-logos-wrapper::-webkit-scrollbar {
-    display: none;
+    padding-top: 1rem;
+    font-size: 0;
 }
 #references .partner-logos {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 8em;
-    padding-right: 8em;
-    box-sizing: border-box;
+    display: inline-block;
     animation: spin 30s infinite linear;
 }
 #references .partner-logos img {
-    flex: 0 0 0;
-    height: 3em;
+    height: 6rem;
     width: auto;
+    padding: 0 7rem;
 }
 
 
@@ -281,6 +276,7 @@ a:hover, a:active {
     gap: 1em;
     text-align: justify;
     font-size: 1.2em;
+    overflow-x: hidden;
 }
 #about .history img, #about .present img {
     width: 35vw;
@@ -351,6 +347,9 @@ a:hover, a:active {
 }
 
 
+.animatedChildren > *, .animated {
+    opacity: 0;
+}
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -359,12 +358,41 @@ a:hover, a:active {
         opacity: 1;
     }
 }
-@keyframes spin {
+.fadeIn {
+    animation: fadeIn forwards 0.4s ease-in;
+}
+@keyframes fadeFromLeft {
     from {
-        translate: 0;
+        opacity: 0;
+        transform: translateX(-30%);
     }
     to {
-        translate: -100%;
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.fadeFromLeft {
+    animation: fadeFromLeft forwards 0.8s ease-in;
+}
+@keyframes fadeFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(30%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.fadeFromRight {
+    animation: fadeFromRight forwards 0.8s ease-in;
+}
+@keyframes spin {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
     }
 }
 @keyframes rotate0 {
