@@ -186,7 +186,7 @@ a:hover, a:active {
 #services summary::before {
     content: " ";
     display: inline-block;
-    background: url("./assets/images/triangle.svg") center / contain no-repeat;
+    background: url("./assets/images/triangle-icon.svg") center / contain no-repeat;
     height: 1em;
     width: 1em;
     margin-right: 0.5em;
@@ -456,9 +456,10 @@ a:hover, a:active {
     #about .history, #about .present {
         position: relative;
     }
-    #about .dimmer {
+    #about .history::before, #about .present::before {
         display: block;
-        z-index: 10000;
+        content: "";
+        z-index: 1000;
         position: absolute;
         width: 100%;
         height: 100%;
