@@ -129,12 +129,12 @@ a:hover, a:active {
 #home {
     width: 100%;
     height: 85vh;
-    background: url("./assets/images/background.png") center / cover no-repeat;
+    background: url("./assets/images/background.webp") center / cover no-repeat;
     color: var(--font-primary-color);
     font-size: 1em;
 }
 #hero {
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.65);
     width: 100%;
     height: 100%;
 }
