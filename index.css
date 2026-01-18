@@ -13,7 +13,7 @@
     --font-primary-color: rgb(254, 248, 229);
     --font-secondary-color: rgb(18, 18, 18);
     --font-tertiary-color: rgb(204, 191, 150);
-    --font-4th-color: rgb(55, 55, 55);
+    --font-4th-color: rgb(45, 45, 45);
     --nav-color: rgba(18, 18, 18, 0.4);
     --nav-link-color: rgb(254, 248, 229);
     --nav-link-active-color: rgb(254, 248, 229);
@@ -180,10 +180,10 @@ a:hover, a:active {
 }
 #services h3 {
     display: flex;
-    font-size: 1.1em;
-    font-weight: normal;
+    font-size: 1em;
+    font-weight: 500;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
 }
 #services h3::before {
     content: "";
@@ -199,8 +199,6 @@ a:hover, a:active {
     transform: rotate(180deg);
 }
 #services li p {
-    font-size: 0.9em;
-    color: var(--font-4th-color);
     overflow: hidden;
     interpolate-size: allow-keywords;
     transition: height 0.2s ease-out;
