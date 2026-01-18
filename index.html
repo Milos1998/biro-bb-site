@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="sr">
 <head>
-<!-- TODO update services cards -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biro BB | Arhitektura i izvođenje građevinskih radova</title>
@@ -48,32 +47,42 @@
                 <p class="animated">
                     U arhitektonskom birou BB nudimo usluge:
                 </p>
-                <div class="detailList animatedChildren">
-                    <details>
-                        <summary>Projektovanje i izgradnja poslovnih zgrada</summary>
-                        Iskustvo u projektovanju poslovnih objekata nam je postavilo cilj: postići optimalno rešenje s obzirom na želje investitora,
-                        estetsko i funkcionalno oblikovanje građevine, te urbanističke zahtjeve. U poslovima projektovanja možemo obaviti sve radnje
-                        potrebne za promišljanje, izradu i sprovođenje određenog projekta. Za klijenta to znači uštedu energije,
-                        vremena i novaca, kao i kontrolu dinamike projekta na jednom mestu.
-                    </details>
-                    <details>
-                        <summary>Projektovanje i izgradnja stambenih zgrada</summary>
-                        Izrada projekata visokogradnje - stambenih, turističkih, poslovnih, industrijskih i javnih građevina, kao i projekata unutrašnjeg uređenja prostora.
-                    </details>
-                    <details>
-                        <summary>Projektovanje i izgradnja privrednih objekata</summary>
-                        Vršimo profesionalno projektovanje svih vrsta poljoprivrednih objekata (za živinarstvo, svinjarstvo i govedarstvo) u skladu sa tehničko-tehnološkim zahtevima.
-                    </details>
-                    <details>
-                        <summary>Projektovanje i izgradnja enterijera</summary>
-                        Kompletno projektovanje i dizajn enterijera ili uređenje enterijera, bilo da se radi o uređenju stanova i vila ili uređenju
-                        ekskluzivnih restorana, barova, kafica, ofisa, hotela i drugih objekata.
-                    </details>
-                    <details>
-                        <summary>Legalizacija objekata</summary>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum nulla nihil fugiat sequi quod ipsa inventore eum adipisci nostrum voluptates!
-                    </details>
-                </div>
+                <ul class="detailList animatedChildren">
+                    <li class="closed">
+                        <h3>Projektovanje i izgradnja poslovnih zgrada</h3>
+                        <p>
+                            Iskustvo u projektovanju poslovnih objekata nam je postavilo cilj: postići optimalno rešenje s obzirom na želje investitora,
+                            estetsko i funkcionalno oblikovanje građevine, te urbanističke zahtjeve. U poslovima projektovanja možemo obaviti sve radnje
+                            potrebne za promišljanje, izradu i sprovođenje određenog projekta. Za klijenta to znači uštedu energije,
+                            vremena i novaca, kao i kontrolu dinamike projekta na jednom mestu.
+                        </p>
+                    </li>
+                    <li class="closed">
+                        <h3>Projektovanje i izgradnja stambenih zgrada</h3>
+                        <p>
+                            Izrada projekata visokogradnje - stambenih, turističkih, poslovnih, industrijskih i javnih građevina, kao i projekata unutrašnjeg uređenja prostora.
+                        </p>
+                    </li>
+                    <li class="closed">
+                        <h3>Projektovanje i izgradnja privrednih objekata</h3>
+                        <p>
+                            Vršimo profesionalno projektovanje svih vrsta poljoprivrednih objekata (za živinarstvo, svinjarstvo i govedarstvo) u skladu sa tehničko-tehnološkim zahtevima.
+                        </p>
+                    </li>
+                    <li class="closed">
+                        <h3>Projektovanje i izgradnja enterijera</h3>
+                        <p>
+                            Kompletno projektovanje i dizajn enterijera ili uređenje enterijera, bilo da se radi o uređenju stanova i vila ili uređenju
+                            ekskluzivnih restorana, barova, kafica, ofisa, hotela i drugih objekata.
+                        </p>
+                    </li>
+                    <li class="closed">
+                        <h3>Legalizacija objekata</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum nulla nihil fugiat sequi quod ipsa inventore eum adipisci nostrum voluptates!
+                        </p>
+                    </li>
+                </ul>
             </div>
         </section>
 
@@ -216,17 +225,14 @@
 </body>
 
 <script>
-    function toggleServiceClass(e) {
-        const summary = e.target.children[0];
-        if (summary.classList.contains("beforeRotate0")) summary.classList.replace("beforeRotate0", "beforeRotate90");
-        else if (summary.classList.contains("beforeRotate90")) summary.classList.replace("beforeRotate90", "beforeRotate0");
-        else summary.classList.add("beforeRotate90")
+    function toggleServiceClass(element) {
+        if (element.classList.contains("closed")) element.classList.replace("closed", "opened");
+        else element.classList.replace("opened", "closed");
     }
 
-    const services = document.getElementById("services");
-    const details = services.getElementsByTagName("details");
-    for (const detail of details) {
-        detail.addEventListener("toggle", toggleServiceClass);
+    const servicesDetails = document.querySelector("#services .detailList");
+    for (const detailLi of servicesDetails.children) {
+        detailLi.onclick = () => toggleServiceClass(detailLi);
     }
 
     const navOpen = document.getElementById("nav-open-btn");

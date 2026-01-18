@@ -13,6 +13,7 @@
     --font-primary-color: rgb(254, 248, 229);
     --font-secondary-color: rgb(18, 18, 18);
     --font-tertiary-color: rgb(204, 191, 150);
+    --font-4th-color: rgb(55, 55, 55);
     --nav-color: rgba(18, 18, 18, 0.4);
     --nav-link-color: rgb(254, 248, 229);
     --nav-link-active-color: rgb(254, 248, 229);
@@ -171,31 +172,46 @@ a:hover, a:active {
     user-select: none;
     text-align: justify;
 }
-#services details {
-    border: var(--font-secondary-color) 0.1rem solid;
-    padding: 0.4em;
-}
-#services summary {
+#services li {
     cursor: pointer;
+    border: rgb(0, 0, 0) 0.1rem solid;
+    list-style-type: none;
+    padding: 0.4em 1em;
+}
+#services h3 {
     display: flex;
+    font-size: 1.1em;
+    font-weight: normal;
     align-items: center;
+    gap: 1rem;
 }
-#services summary::marker {
-    content: none;
+#services h3::before {
+    content: "";
+    width: 1.3rem;
+    height: 1rem;
+    background: url("./assets/images/arrow-down.svg") center / contain no-repeat;
+    transition: transform 0.2s ease-out;
 }
-#services summary::before {
-    content: " ";
-    display: inline-block;
-    background: url("./assets/images/triangle-icon.svg") center / contain no-repeat;
-    height: 1em;
-    width: 1em;
-    margin-right: 0.5em;
+#services .closed h3::before {
+    transform: rotate(0deg);
 }
-#services summary.beforeRotate0::before {
-    animation: rotate0 0.1s forwards linear;
+#services .opened h3::before {
+    transform: rotate(180deg);
 }
-#services summary.beforeRotate90::before {
-    animation: rotate90 0.1s forwards linear;
+#services li p {
+    font-size: 0.9em;
+    color: var(--font-4th-color);
+    overflow: hidden;
+    interpolate-size: allow-keywords;
+    transition: height 0.2s ease-out;
+    position: relative;
+}
+#services li.closed p {
+    height: 0;
+    margin: 0;
+}
+#services li.opened p {
+    height: auto;
 }
 
 
@@ -398,22 +414,6 @@ a:hover, a:active {
     }
     to {
         transform: translateX(-100%);
-    }
-}
-@keyframes rotate0 {
-    from {
-        transform: rotate(90deg);
-    }
-    to {
-        transform: rotate(0);
-    }
-}
-@keyframes rotate90 {
-    from {
-        transform: rotate(0);
-    }
-    to {
-        transform: rotate(90deg);
     }
 }
 
