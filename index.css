@@ -93,10 +93,10 @@ a:link, a:visited {
 a:hover, a:active {
     color: var(--nav-link-active-color);
 }
-.nav-horizontal #logo {
+.nav-horizontal .logo {
     margin-right: 3rem;
 }
-.nav #logo img {
+.nav .logo img {
     height: 4rem;
     width: auto;
 }
